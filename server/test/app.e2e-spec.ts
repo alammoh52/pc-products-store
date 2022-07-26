@@ -15,10 +15,30 @@ describe('AppController (e2e)', () => {
     await app.init();
   });
 
-  it('/ (GET)', () => {
+  it('/items (GET)', () => {
     return request(app.getHttpServer())
-      .get('/')
+      .get('/items?searchTerm=Clock&category=Essentials')
       .expect(200)
-      .expect('Hello World!');
+      .expect([
+        {
+          sku: '7',
+          title: 'Clock',
+          price: 15.99,
+          category: 'Essentials',
+          rating: 5,
+        },
+      ]);
+  });
+  it('/sku (GET)', () => {
+    return request(app.getHttpServer())
+      .get('/2')
+      .expect(200)
+      .expect({
+        sku: '2',
+        title: 'Shirt',
+        price: 12.49,
+        category: 'Essentials',
+        rating: 4,
+      });
   });
 });
