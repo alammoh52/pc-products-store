@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import { device, ProductTileProps } from "../common/constants";
 
@@ -12,8 +12,10 @@ const Wrapper = styled.div`
 `;
 const Details = styled.div`
   width: 100%;
+  padding-left: 16px;
   @media ${device.mobile} {
     text-align: center;
+    padding: 0px;
   }
 `;
 const Property = styled.span`
@@ -27,8 +29,44 @@ const PropertyValuePair = styled.div`
   margin-bottom: 8px;
   margin-top: 4px;
 `;
+const ImageWrapper = styled.div`
+  max-width: 500px;
+  @media ${device.mobile} {
+    margin: auto;
+  }
+`;
+const StyledImage = styled.img`
+  max-width: 100%;
+`;
+
+const Ratings = styled.span`
+  color: gold;
+`;
+
+const Price = styled.span`
+  color: green;
+`;
+
+const BackButton = styled.button`
+  height: 30px;
+  width: 80px;
+  border-radius: 20px;
+  cursor: pointer;
+  border: 1px solid grey;
+  background-color: white;
+  margin: 20px;
+  :hover{
+    background-color: grey;
+    color: white;
+  }
+  :active{
+    background-color: white;
+    color: black;
+  }
+`;
 
 export const ProductDetails = () => {
+  const navigate = useNavigate();
   const [product, setProduct] = useState({} as ProductTileProps);
   const [pageError, setPageError] = useState(false);
   const [loading, setLoading] = useState(true);
@@ -57,31 +95,36 @@ export const ProductDetails = () => {
     return <>Loading...</>;
   }
   return (
-    <Wrapper>
-      <img alt={`Product sku: ${product.sku}`} src="/images/product-img.svg" />
-      <Details>
-        <h3>{product.title}</h3>
-        <hr />
-        <PropertyValuePair>
-          <Property>Sku: </Property>
-          <Value>{product.sku}</Value>
-        </PropertyValuePair>
-        <PropertyValuePair>
-          <Property>Category: </Property>
-          <Value>{product.category}</Value>
-        </PropertyValuePair>
-        <PropertyValuePair>
-          <Property>Rating: </Property>
-          {[...Array(product.rating)].map((e, i) => (
-            <span key={i}>★</span>
-          ))}
-        </PropertyValuePair>
-        <hr />
-        <PropertyValuePair>
-          <Property>Price: </Property>
-          <Value>${product.price}</Value>
-        </PropertyValuePair>
-      </Details>
-    </Wrapper>
+    <>
+      <BackButton onClick={() => navigate(-1)}>← Back</BackButton>
+      <Wrapper>
+        <ImageWrapper>
+          <StyledImage alt={`Product sku: ${product.sku}`} src={product.src} />
+        </ImageWrapper>
+        <Details>
+          <h3>{product.title}</h3>
+          <hr />
+          <PropertyValuePair>
+            <Property>Sku: </Property>
+            <Value>{product.sku}</Value>
+          </PropertyValuePair>
+          <PropertyValuePair>
+            <Property>Category: </Property>
+            <Value>{product.category}</Value>
+          </PropertyValuePair>
+          <PropertyValuePair>
+            <Property>Rating: </Property>
+            {[...Array(product.rating)].map((e, i) => (
+              <Ratings key={i}>★</Ratings>
+            ))}
+          </PropertyValuePair>
+          <hr />
+          <PropertyValuePair>
+            <Property>Price: </Property>
+            <Price>${product.price}</Price>
+          </PropertyValuePair>
+        </Details>
+      </Wrapper>
+    </>
   );
 };

@@ -1,5 +1,5 @@
 const size = {
-  mobile: "425px",
+  mobile: "512px",
   tablet: "768px",
   desktop: "1024px",
 };
@@ -16,6 +16,7 @@ export interface ProductTileProps {
   rating: number;
   price: number;
   category: string;
+  src: string;
   className?: string;
 }
 

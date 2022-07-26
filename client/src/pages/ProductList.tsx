@@ -8,11 +8,12 @@ const Wrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 16px;
 `;
 const StyledProductTile = styled(ProductTile)`
-  margin: 8px;
+  margin: 24px;
   @media ${device.mobile} {
-    margin: 0px;
+    margin: 0px 0px 10px 0px;
     width: 100%;
   }
 `;
@@ -49,10 +50,11 @@ export const ProductList = () => {
         <>No items found. Update your search terms to find other items.</>
       )}
       {itemList.length > 0 &&
-        itemList.map(({ sku, title, price, category, rating }, i) => (
+        itemList.map(({ sku, title, price, category, rating, src }, i) => (
           <StyledProductTile
             key={title + i}
             sku={sku}
+            src={src}
             title={title}
             price={price}
             category={category}

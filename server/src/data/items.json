@@ -4,97 +4,111 @@
     "title": "Car",
     "price": 93.5,
     "category": "Hobbies",
-    "rating": 2
+    "rating": 2,
+    "src": "/images/car.jpg"
   },
   {
     "sku": "2",
     "title": "Shirt",
     "price": 12.49,
     "category": "Essentials",
-    "rating": 4
+    "rating": 4,
+    "src": "/images/shirt.jpeg"
   },
   {
     "sku": "3",
     "title": "TV",
     "price": 99.31,
     "category": "Hobbies",
-    "rating": 5
+    "rating": 5,
+    "src": "/images/tv.jpeg"
   },
   {
     "sku": "4",
     "title": "Couch",
     "price": 20.33,
     "category": "Home",
-    "rating": 1
+    "rating": 1,
+    "src": "/images/couch.jpeg"
   },
   {
     "sku": "5",
     "title": "Chair",
     "price": 87.34,
     "category": "Home",
-    "rating": 2
+    "rating": 2,
+    "src": "/images/chair.avif"
   },
   {
     "sku": "6",
     "title": "Table",
     "price": 34.33,
     "category": "Home",
-    "rating": 3
+    "rating": 3,
+    "src": "/images/table.avif"
   },
   {
     "sku": "7",
     "title": "Clock",
     "price": 15.99,
     "category": "Essentials",
-    "rating": 5
+    "rating": 5,
+    "src": "/images/clock.jpeg"
   },
   {
     "sku": "8",
     "title": "Phone",
     "price": 33.93,
     "category": "Hobbies",
-    "rating": 1
+    "rating": 1,
+    "src": "/images/phone.jpeg"
   },
   {
     "sku": "9",
     "title": "Door",
     "price": 20.78,
     "category": "Home",
-    "rating": 5
+    "rating": 5,
+    "src": "/images/door.jpeg"
   },
   {
     "sku": "10",
     "title": "T-Shirt",
     "price": 30.89,
     "category": "Hobbies",
-    "rating": 3
+    "rating": 3,
+    "src": "/images/tshirt.jpeg"
   },
   {
     "sku": "11",
     "title": "Cushion",
     "price": 47.99,
     "category": "Home",
-    "rating": 5
+    "rating": 5,
+    "src": "/images/cushion.avif"
   },
   {
     "sku": "12",
     "title": "Rug",
     "price": 39.78,
     "category": "Home",
-    "rating": 1
+    "rating": 1,
+    "src": "/images/rug.webp"
   },
   {
     "sku": "13",
     "title": "Remote",
     "price": 23.76,
     "category": "Essentials",
-    "rating": 4
+    "rating": 4,
+    "src": "/images/remote.webp"
   },
   {
     "sku": "14",
     "title": "Microwave",
     "price": 90.78,
     "category": "Essentials",
-    "rating": 3
+    "rating": 3,
+    "src": "/images/microwave.avif"
   }
 ]

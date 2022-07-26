@@ -6,6 +6,7 @@ const props = {
   rating: 5,
   price: 25,
   category: "Essentials",
+  src: ""
 };
 
 describe("ProductTile", () => {
