@@ -9,7 +9,7 @@ function App() {
       <PageLayout>
       <Routes>
         <Route path="/" element={<ProductList />} />
-        <Route path="/:id" element={<ProductDetails />} />
+        <Route path="/:sku" element={<ProductDetails />} />
       </Routes>
       </PageLayout>
     </div>

@@ -2,6 +2,8 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
+import * as mockedItems from './data/items.json';
+
 describe('AppController', () => {
   let appController: AppController;
 
@@ -14,9 +16,27 @@ describe('AppController', () => {
     appController = app.get<AppController>(AppController);
   });
 
-  describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+  describe('items', () => {
+    it('returns full items list"', () => {
+      expect(appController.getItems('', '')).toStrictEqual(mockedItems);
+    });
+    it('returns filtered items list"', () => {
+      expect(appController.getItems('Home', 'table')).toStrictEqual([
+        {
+          category: 'Home',
+          price: 34.33,
+          rating: 3,
+          sku: '6',
+          title: 'Table',
+        },
+      ]);
+    });
+  });
+  describe('item', () => {
+    it('returns item queried by sku"', () => {
+      expect(appController.getItem('5')).toStrictEqual([
+        { category: 'Home', price: 87.34, rating: 2, sku: '5', title: 'Chair' },
+      ]);
     });
   });
 });
