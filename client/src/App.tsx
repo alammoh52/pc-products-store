@@ -7,10 +7,10 @@ function App() {
   return (
     <div>
       <PageLayout>
-      <Routes>
-        <Route path="/" element={<ProductList />} />
-        <Route path="/:sku" element={<ProductDetails />} />
-      </Routes>
+        <Routes>
+          <Route path="/" element={<ProductList />} />
+          <Route path="/:sku" element={<ProductDetails />} />
+        </Routes>
       </PageLayout>
     </div>
   );

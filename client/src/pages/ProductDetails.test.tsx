@@ -26,9 +26,9 @@ describe("ProductDetails", () => {
     fetchMock.mockResponseOnce(JSON.stringify(mockProduct));
     renderProductDetails();
     await waitFor(() => {
-    expect(screen.getByText(/TV/i)).toBeInTheDocument();
-    expect(screen.getByText(/Hobbies/i)).toBeInTheDocument();
-    expect(screen.getByText(/99.31/i)).toBeInTheDocument();
+      expect(screen.getByText(/TV/i)).toBeInTheDocument();
+      expect(screen.getByText(/Hobbies/i)).toBeInTheDocument();
+      expect(screen.getByText(/99.31/i)).toBeInTheDocument();
     });
   });
 });

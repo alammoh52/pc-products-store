@@ -1,14 +1,24 @@
 import styled from "styled-components";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import { FormEvent, PropsWithChildren, useState } from "react";
-import { categories } from "../common/constants";
+import { categories, device } from "../common/constants";
 
 const Navbar = styled.div`
   display: flex;
   width: 100%;
   background-color: black;
-  min-height: 40px;
   align-items: center;
+  padding: 8px;
+  @media ${device.mobile} {
+    flex-direction: column;
+  }
+`;
+
+const StyledForm = styled.form`
+  @media ${device.mobile} {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
 const ChildrenWrapper = styled.div`
@@ -50,7 +60,7 @@ export const PageLayout = (props: PropsWithChildren) => {
     <>
       <Navbar>
         <StyledHomeButton to="/">🏠 Products Shop</StyledHomeButton>
-        <form onSubmit={onSubmit}>
+        <StyledForm onSubmit={onSubmit}>
           <input
             type="text"
             name="product-search-text"
@@ -74,8 +84,10 @@ export const PageLayout = (props: PropsWithChildren) => {
               </option>
             ))}
           </select>
-          <button data-testid="search-button" onClick={searchItem}>Search 🔎</button>
-        </form>
+          <button data-testid="search-button" onClick={searchItem}>
+            Search 🔎
+          </button>
+        </StyledForm>
       </Navbar>
       <ChildrenWrapper>{props.children}</ChildrenWrapper>
     </>

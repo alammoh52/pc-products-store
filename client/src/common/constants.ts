@@ -19,8 +19,4 @@ export interface ProductTileProps {
   className?: string;
 }
 
-export const categories = [
-  "Essentials",
-  "Hobbies",
-  "Home"
-]
+export const categories = ["Essentials", "Hobbies", "Home"];

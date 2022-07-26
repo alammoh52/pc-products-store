@@ -15,7 +15,7 @@ export const ProductTile = ({
   price,
   category,
   className,
-  sku
+  sku,
 }: ProductTileProps) => {
   return (
     <Wrapper href={`/${sku}`} className={className}>
