@@ -34,9 +34,13 @@ describe('AppController', () => {
   });
   describe('item', () => {
     it('returns item queried by sku"', () => {
-      expect(appController.getItem('5')).toStrictEqual([
-        { category: 'Home', price: 87.34, rating: 2, sku: '5', title: 'Chair' },
-      ]);
+      expect(appController.getItem('5')).toStrictEqual({
+        category: 'Home',
+        price: 87.34,
+        rating: 2,
+        sku: '5',
+        title: 'Chair',
+      });
     });
   });
 });
