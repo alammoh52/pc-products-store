@@ -1,14 +1,20 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import styled from "styled-components";
-import { ProductTileProps } from "../common/constants";
+import { device, ProductTileProps } from "../common/constants";
 
 const Wrapper = styled.div`
   display: flex;
   padding: 16px;
+  @media ${device.mobile} {
+    flex-direction: column;
+  }
 `;
 const Details = styled.div`
   width: 100%;
+  @media ${device.mobile} {
+    text-align: center;
+  }
 `;
 const Property = styled.span`
   font-weight: bold;
