@@ -19,7 +19,7 @@ export const ProductTile = ({
 }: ProductTileProps) => {
   return (
     <Wrapper href={`/${sku}`} className={className}>
-      <img src="/images/product-img.svg" />
+      <img alt={`Product sku: ${sku}`} src="/images/product-img.svg" />
       <>
         <p>{title}</p>
         {[...Array(rating)].map((e, i) => (

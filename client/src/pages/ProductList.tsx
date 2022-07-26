@@ -39,7 +39,7 @@ export const ProductList = () => {
       setLoading(false);
     }
     fetchItems().catch(() => setPageError(true));
-  }, [searchParams]);
+  }, [searchTerm, category]);
 
   return (
     <Wrapper>

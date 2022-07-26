@@ -52,7 +52,7 @@ export const ProductDetails = () => {
   }
   return (
     <Wrapper>
-      <img src="/images/product-img.svg" />
+      <img alt={`Product sku: ${product.sku}`} src="/images/product-img.svg" />
       <Details>
         <h3>{product.title}</h3>
         <hr />
